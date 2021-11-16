@@ -104,6 +104,6 @@ data_final_continuous <- data %>%
 
 
 ```{r}
-write_xlsx(data_final, path = "./data/data_final_continuous.xlsx")
+write_xlsx(data_final_continuous, path = "./data/data_final_continuous.xlsx")
 ```
 

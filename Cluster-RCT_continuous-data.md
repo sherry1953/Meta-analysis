@@ -20,10 +20,10 @@ should first upload your data (.csv) into the “data” file.
 Remember: Please format your data file the same as the example data set!
 
 ``` r
-data <- read_csv(file = "./data/data_clustered.csv")
+data <- read_csv(file = "./data/data_clustered_continuous.csv")
 ```
 
-    ## Rows: 6 Columns: 8
+    ## Rows: 8 Columns: 8
 
     ## -- Column specification --------------------------------------------------------
     ## Delimiter: ","
@@ -93,7 +93,7 @@ data <- data %>%
 # Finalize the dataset
 
 ``` r
-data_final <- data %>%
+data_final_continuous <- data %>%
   select(id, treatment, n_effective, change, change_sd) %>%
   mutate(n1 = if_else(treatment == 1, n_effective, 0),
          mean1 = if_else(treatment == 1, change, 0),
@@ -110,5 +110,5 @@ data_final <- data %>%
 ```
 
 ``` r
-write_xlsx(data_final, path = "./data/data_final.xlsx")
+write_xlsx(data_final_continuous, path = "./data/data_final_continuous.xlsx")
 ```
